@@ -1,0 +1,26 @@
+var book = [{
+    title: "The Giver",
+    stars: 4
+},
+{title: "eu , eu mesmo",
+stars:5},
+{title:"perdido",
+stars:2}];
+var n;
+// draw shelf
+fill(173, 117, 33);
+rect(0, 120, width, 10);
+var drawbook=function(n,x,y){
+// draw one book
+fill(214, 255, 219);
+rect(x, 20, 90, 100);
+fill(0, 0, 0);
+text(book[n].title, x+10, 33, 70, 100);
+for (var i = 0; i < book[n].stars; i++) {
+    image(getImage("cute/Star"), 17 + i * 19, 92, 21, 30);
+}
+};
+for(var i=0;i<book.length;i++){
+drawbook(i,i*20,12);
+//drawbook(i,122,12);
+}
